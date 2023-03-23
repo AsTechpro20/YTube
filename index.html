@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <link rel="icon" type="image/x-icon" href="./Images/YTube.png">
+</head>
+<body>
+    <div class="container">
+      <header>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo" onclick="redirectToHome()">YTube</label>
+        <ul>
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+        </nav>
+      </header>
+      <section class="space">
+        <div>
+          <div id="main">
+            <form>
+              <br>
+              <h1>YTube <span class="text"></span></h1>
+              <label for="url">Video URL:</label>
+              <input type="text" name="url" id="url" required oninput="showIframe()" value="Paste Url Here" ><br><br>
+              <span id="error-message"></span>
+              <label for="format">Video Format:</label>
+              <select name="format" id="format">
+                  <option value="mp4" class="option">MP4</option>
+                  <option value="mp3" class="option">MP3</option>
+              </select><br><br>
+              <label for="quality" id="quality-label">Video Quality:</label>
+              <select name="quality" id="quality">
+                  <option value="highest" class="option">Highest</option>
+                  <option value="lowest" class="option">Lowest</option>
+              </select><br><br>
+              <button type="submit" id="submit-btn">Download</button>
+          </form>
+          </div>
+        </div>
+      </section>
+     
+
+
+      
+      <footer>
+        <div class="main-content">
+          <div class="left box">
+            <h2>About us</h2>
+            <div class="content">
+              <p>AsTechpro20 Is Sucks at Programing</p>
+              <div class="social">
+                <a href="https://github.com/AsTechpro20"><span class="fa-brands fa-github"></span></a>
+                <a href="https://twitter.com/AsTechpro20"><span class="fab fa-twitter"></span></a>
+                <a href="https://instagram.com/AsTechpro20"><span class="fab fa-instagram"></span></a>
+                <a href="https://www.youtube.com/channel/UCbO1IT3t9f0oE8t37ZgfB7Q"><span class="fab fa-youtube"></span></a>
+                <a href="#"><span class="fa-brands fa-discord"></span></a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="center box">
+            <h2>Pages</h2>
+            <div class="content">
+              <div class="pages">
+              <ul>
+                <li><a href="./about.html">About Us</a></li>
+                <lI><a href="./faq.html">FAQ</a></lI>
+                <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="./api.html">API</a></li>
+                <li><a href="./termsofservice.html">Terms of Service</a></li>
+              </ul>
+              </div>
+            </div>
+          </div>
+  
+          <div class="right box">
+            <h2>Other Projects</h2>
+            <div class="content">
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+<div class="bottom">
+          <center>
+
+            <span class="far fa-copyright"></span><span> YTube 2023 All rights reserved |</span>
+            <span class="credit">Made With <i class="fas fa-heart text-danger"></i> By <a href="https://www.astechpro20.tk/">AsTechpro20</a> | </span>
+            
+          </center>
+        </div>
+      </footer>
+   
+
+
+</body>
+</html>
+<script>
+
+function redirectToHome() {
+  window.location.href = "/index.html";
+}
+  const menuBar = document.getElementById('check');
+const content = document.getElementById('main');
+
+menuBar.addEventListener('click', function() {
+if (menuBar.checked) {
+  content.style.display = 'none';
+} else {
+  content.style.display = 'block';
+}
+});
+
+const checkbox = document.querySelector('input[type="checkbox"]');
+const footer = document.querySelector('footer');
+
+checkbox.addEventListener('click', function() {
+  if (checkbox.checked) {
+    footer.style.display = 'none';
+  } else {
+    footer.style.display = 'block';
+  }
+});
+
+const check = document.getElementById('check');
+const body = document.body;
+
+check.addEventListener('click', function() {
+  if (check.checked) {
+    body.classList.add('no-scroll');
+  } else {
+    body.classList.remove('no-scroll');
+  }
+});
+
+var typingEffect = new Typed(".text",{
+   strings: ['Downloader!','Free Downloader!'],
+   loop : true,
+   typeSpeed : 100,
+   backSpeed : 80,
+   backDelay : 1500,
+
+});
+
+
+function showIframe() {
+  const urlInput = document.querySelector('#url');
+  const url = urlInput.value;
+  const iframeContainer = document.querySelector('#iframe-container');
+
+  if (url.match(/^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/)) {
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', `https://www.youtube.com/embed/${extractVideoId(url)}`);
+    iframe.setAttribute('width', '560');
+    iframe.setAttribute('height', '315');
+    iframe.setAttribute('allow', 'autoplay; encrypted-media');
+    iframeContainer.innerHTML = '';
+    iframeContainer.appendChild(iframe);
+    urlInput.setCustomValidity('');
+  } else {
+    iframeContainer.innerHTML = '';
+    urlInput.setCustomValidity('Invalid YouTube URL');
+  }
+}
+
+      function extractVideoId(url) {
+        if (url.match(/^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/)) {
+          const videoIdMatch = url.match(/(?:v=|youtu\.be\/)([\w-]+)/);
+          if (videoIdMatch) {
+            return videoIdMatch[1];
+          }
+        }
+        return null;
+      }
+       const urlInput = document.querySelector('#url');
+urlInput.addEventListener('input', () => {
+  urlInput.checkValidity();
+});
+      const form = document.querySelector('form');
+      const formatSelect = document.querySelector('#format');
+      const qualityLabel = document.querySelector('#quality-label');
+      const qualitySelect = document.querySelector('#quality');
+      const submitBtn = document.querySelector('#submit-btn');
+      
+     
+      formatSelect.addEventListener('change', (e) => {
+        if (e.target.value === 'mp3') {
+          qualityLabel.hidden = true;
+          qualitySelect.hidden = true;
+        } else {
+          qualityLabel.hidden = false;
+          qualitySelect.hidden = false;
+
+        }
+      });
+
+      
+      form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const url = document.querySelector('#url').value;
+  const format = document.querySelector('#format').value;
+  let downloadUrl = `http://localhost:3000/download?url=${encodeURIComponent(url)}&format=${format}`;
+  if (format === 'mp4') {
+    const quality = document.querySelector('#quality').value;
+    downloadUrl += `&quality=${quality}`;
+  }
+  submitBtn.disabled = true;
+  window.location.href = downloadUrl;
+
+  fetch(`/download?url=${videoUrl}&format=${format}&quality=${quality}`)
+  .then(res => {
+    if (res.ok) {
+      return res.blob().then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = getFileName(res);
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      });
+    } else {
+      throw new Error(res.statusText);
+    }
+  })
+  .catch(err => {
+    const errorContainer = document.querySelector('#error-message');
+    errorContainer.textContent = `Invalid URL: ${err.message}`;
+  });
+
+
+
+});
+</script>
