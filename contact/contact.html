@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTube-Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <link rel="icon" type="image/x-icon" href="./Images/YTube.png">
+</head>
+<body>
+    <div class="container">
+      <header>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo" onclick="redirectToHome()">YTube</label>
+        <ul>
+          <li><a class="active" href="./Index.html">Home</a></li>
+          <li><a href="./about/about.html">About</a></li>
+          <li><a href="./contact/contact.html">Contact Us</a></li>
+        </ul>
+        </nav>
+      </header>
+      <section class="space">
+        <div id="main">
+            <br>
+                <a class="maintext"><h1 class="h1">YTube <span class="text"></span></h1></a>
+               <div class="contactus"><h1>Contact Us</h1></div>
+      </section>
+           <div class="contactus1">
+            <br>
+            <br>
+            <p class="contacttext">
+
+                       Thank you for visiting our website! If you have any questions, comments, or suggestions, please feel free to get in touch with us by emailing us at <b>contact@astechpro20.tk</b>.
+                       <br>
+                       <br>
+                       We will do our best to respond to your message as soon as possible. Your feedback is important to us and will help us improve our website and services.
+                       <br>
+                       <br>
+                       Thank you again for your interest in our website. We look forward to hearing from you soon!
+                       <br>
+                       <br>
+                       Best regards,
+                       The YTube Team
+            </p>
+            <br>
+            <br>
+           </div>
+     
+
+      <footer>
+        <div class="main-content">
+          <div class="left box">
+            <h2>About Us</h2>
+            <div class="content">
+              <p>AsTechpro20 Is Sucks at Programing</p>
+              <div class="social">
+                <a href="https://github.com/AsTechpro20"><span class="fa-brands fa-github"></span></a>
+                <a href="https://twitter.com/AsTechpro20"><span class="fab fa-twitter"></span></a>
+                <a href="https://instagram.com/AsTechpro20"><span class="fab fa-instagram"></span></a>
+                <a href="https://www.youtube.com/channel/UCbO1IT3t9f0oE8t37ZgfB7Q"><span class="fab fa-youtube"></span></a>
+                <a href="#"><span class="fa-brands fa-discord"></span></a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="center box">
+            <h2>Pages</h2>
+            <div class="content">
+              <div class="pages">
+              <ul>
+                <li><a href="./about/about.html">About Us</a></li>
+                <li><a href="./FAQ/faq.html">FAQ</a></li>
+                <li><a href="./privacypolicy/privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="./contact/contact.html">Contact Us</a></li>
+                <li><a href="./apipage/api.html">API</a></li>
+                <li><a href="./termsofservice/termsofservice.html">Terms of Service</a></li>
+              </ul>
+              </div>
+            </div>
+          </div>
+  
+          <div class="right box">
+            <h2>Other Projects</h2>
+            <div class="content">
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+<div class="bottom">
+          <center>
+
+            <span class="far fa-copyright"></span><span> YTube 2023 All rights reserved |</span>
+            <span class="credit">Made With <i class="fas fa-heart text-danger"></i> By <a href="https://www.astechpro20.tk/">AsTechpro20</a> | </span>
+            
+          </center>
+        </div>
+      </footer>
+   
+
+
+</body>
+</html>
+<script>
+function redirectToHome() {
+  window.location.href = "/index.html";
+}
+
+  const menuBar = document.getElementById('check');
+const content = document.getElementById('main');
+
+menuBar.addEventListener('click', function() {
+if (menuBar.checked) {
+  content.style.display = 'none';
+} else {
+  content.style.display = 'block';
+}
+});
+
+const checkbox = document.querySelector('input[type="checkbox"]');
+const footer = document.querySelector('footer');
+
+checkbox.addEventListener('click', function() {
+  if (checkbox.checked) {
+    footer.style.display = 'none';
+  } else {
+    footer.style.display = 'block';
+  }
+});
+
+const check = document.getElementById('check');
+const body = document.body;
+
+check.addEventListener('click', function() {
+  if (check.checked) {
+    body.classList.add('no-scroll');
+  } else {
+    body.classList.remove('no-scroll');
+  }
+});
+
+var typingEffect = new Typed(".text",{
+   strings: ['Downloader!','Free Downloader!'],
+   loop : true,
+   typeSpeed : 100,
+   backSpeed : 80,
+   backDelay : 1500,
+
+});
+</script>
