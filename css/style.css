@@ -11,6 +11,7 @@
   body{
     font-family: montserrat;
     height: 100vh;  
+    background-color: black;
   }
   nav{
     background: #4d06cf;
@@ -112,8 +113,6 @@
   }
   .space{
     background-color: black;
-    background-size: cover;
-    height: calc(100vh - 80px);
   }
   
  
