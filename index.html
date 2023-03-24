@@ -213,7 +213,7 @@ urlInput.addEventListener('input', () => {
   e.preventDefault();
   const url = document.querySelector('#url').value;
   const format = document.querySelector('#format').value;
-  let downloadUrl = `http://localhost:3000/download?url=${encodeURIComponent(url)}&format=${format}`;
+  let downloadUrl = `https://api1.astechpro20.tk/download?url=${encodeURIComponent(url)}&format=${format}`;
   if (format === 'mp4') {
     const quality = document.querySelector('#quality').value;
     downloadUrl += `&quality=${quality}`;
