@@ -72,7 +72,7 @@
     
   }
   
-.aboutus{
+.api1{
     text-align: center;
     margin-top: 50px;
     font-size: 20px;
@@ -301,6 +301,7 @@
       position: relative;
       bottom: 0px;
     }
+
     .main-content{
       flex-wrap: wrap;
       flex-direction: column;
@@ -388,7 +389,7 @@ text-align: center;
 color: white;
 }
 
-.about1{
+.api{
     text-align: center;
     margin-top: 50px;
     font-size: 30px;
