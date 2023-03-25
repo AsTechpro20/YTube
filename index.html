@@ -40,7 +40,7 @@
             <form>
               <br>
               <label for="url">Video URL:</label>
-              <input type="text" name="url" id="url" required oninput="showIframe()" value="Paste Url Here" ><br><br>
+              <input type="text" name="url" id="url" required oninput="showIframe()" placeholder="Enter your text here" onclick="this.value=''"><br><br>
               <span id="error-message"></span>
               <label for="format">Video Format:</label>
               <select name="format" id="format">
