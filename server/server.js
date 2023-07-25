@@ -9,7 +9,7 @@ app.use(cors());
 
 // Serve the index.html file when visiting the root
 app.get('/', (req, res) => {
-  res.redirect('https://ytube.astechpro20.tk/');
+  res.redirect('https://ytube.eu.org/');
 });
 
 // Handle video download requests
@@ -20,7 +20,7 @@ app.get('/download', (req, res) => {
   let contentType, filenamePrefix, filenameSuffix;
 
   if (!ytdl.validateURL(videoUrl)) {
-    res.redirect('https://ytube.astechpro20.tk/error.html'); // redirect to error.html if URL is invalid
+    res.redirect('https://ytube.eu.org/error.html'); // redirect to error.html if URL is invalid
     return;
     }
 
