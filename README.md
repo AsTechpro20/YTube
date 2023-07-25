@@ -4,7 +4,7 @@ A Free YouTube Video Downloader
 
 beta version
 
-https://ytube.astechpro20.tk/
+https://ytube.eu.org/
 
 To start command: node server.js (make sure to do this in server folder)
 
