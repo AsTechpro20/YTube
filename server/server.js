@@ -49,3 +49,12 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+let count = 1;
+
+const printKEEPONLINE = () => {
+  console.log(`Server is online = ${count}`);
+  count++;
+};
+
+setInterval(printKEEPONLINE, 30000); // 20000 milliseconds (20 seconds)
