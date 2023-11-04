@@ -57,4 +57,4 @@ const printKEEPONLINE = () => {
   count++;
 };
 
-setInterval(printKEEPONLINE, 30000); // 20000 milliseconds (20 seconds)
+setInterval(printKEEPONLINE, 5000); // 20000 milliseconds (20 seconds)
